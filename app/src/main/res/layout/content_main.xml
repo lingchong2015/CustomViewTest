@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:paddingBottom="96dp"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main"
-    tools:context="com.curry.stephen.viewtest.MainActivity">
+    tools:context="com.curry.stephen.viewtest.activity.MainActivity"
+    tools:showIn="@layout/activity_main">
 
-    <TextView
+    <com.curry.stephen.viewtest.view.PieChartView
+        android:id="@+id/pie_chart_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.9"
+        android:padding="10dp"
+        android:background="@color/colorAccentTranslucent"
+        app:showText="true"
+        app:labelHeight="20dp"
+        app:labelWidth="110dp"
+        app:labelY="85dp"
+        app:labelPosition="left"
+        app:highlightStrength="1.12"
+        app:pieRotation="0"
+        app:labelColor="@android:color/white"
+        app:autoCenterPointerInSlice="true"
+        app:pointerRadius="4dp"
+    />
+
+    <Button
+        android:id="@+id/button_reset"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-</RelativeLayout>
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/button_reset"/>
+
+</LinearLayout>
